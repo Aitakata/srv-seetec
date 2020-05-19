@@ -36,7 +36,7 @@ public class CursoController {
 	
 	
 	@PostMapping
-	@RequestMapping("/cadastrar")
+	@RequestMapping("/cadastrarcurso")
 	public void cadastrarCurso(@RequestBody CursoDto dto) {		
 		Curso curso = this.toDtoEntity(dto);		
 		repository.save(curso);

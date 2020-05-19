@@ -29,6 +29,4 @@ public class CursoDto implements Serializable{
 		return "CursoDto [nome=" + nome + ", descricao=" + descricao + "]";
 	}
 
-	
-
 }
