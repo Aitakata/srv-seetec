@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tb_aluno")
 public class Aluno {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_aluno", nullable = false)
@@ -34,6 +35,9 @@ public class Aluno {
 
 	@Column(name = "data_nasc", nullable = false)
 	private Date data_nasc;
+	
+	@Column(name = "senha", nullable = false)
+	private String senha;
 
 	public Long getId() {
 		return Id;
@@ -90,11 +94,20 @@ public class Aluno {
 	public void setData_nasc(Date data_nasc) {
 		this.data_nasc = data_nasc;
 	}
+	
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
 	@Override
 	public String toString() {
 		return "Aluno [Id=" + Id + ", nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", email=" + email + ", id_curso="
-				+ id_curso + ", data_nasc=" + data_nasc + "]";
+				+ id_curso + ", data_nasc=" + data_nasc + ", senha=" + senha + "]";
 	}
 	
 	

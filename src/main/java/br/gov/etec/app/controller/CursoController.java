@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +16,8 @@ import br.gov.etec.app.dtos.CursoDto;
 import br.gov.etec.app.entity.Curso;
 import br.gov.etec.app.repository.CursoRepository;
 
-
-
 @RestController
+@RequestMapping("/curso")
 public class CursoController {
 	
 	@Autowired
@@ -24,19 +25,27 @@ public class CursoController {
 	
 	private static final Logger log = LoggerFactory.getLogger(CursoController.class);
 	
-	@RequestMapping("/listarcursos")
+	@GetMapping("/listar")
 	public List<Curso> listarCursos(){		
 		log.info("listando todos cursos da base de dados");
+		/* 
 		List<Curso> cursos = repository.findAll();		
 		for (Curso curso : cursos) {
 			log.debug("Curso: " ,curso.toString());
 		}		
-		return cursos;		
+		return cursos;
+		*/
+		return repository.findAll();
 	}
 	
+	@GetMapping("/id")
+	public Object listarCurso(@PathVariable("id") Long id){
+		log.info("listando um curso");
+				return repository.findById(id);
+	} 
 	
 	@PostMapping
-	@RequestMapping("/cadastrarcurso")
+	@RequestMapping("/cadastrar")
 	public void cadastrarCurso(@RequestBody CursoDto dto) {		
 		Curso curso = this.toDtoEntity(dto);		
 		repository.save(curso);
