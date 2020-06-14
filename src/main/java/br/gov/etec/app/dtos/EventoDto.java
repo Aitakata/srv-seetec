@@ -1,8 +1,13 @@
 package br.gov.etec.app.dtos;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class EventoDto {
+public class EventoDto implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8897101607411657261L;
 	private String nome;
 	private String descricao;
 	private int	status;
@@ -39,5 +44,9 @@ public class EventoDto {
 		this.dataFim = dataFim;
 	}
 	
-
+	@Override
+	public String toString() {
+		return "EventoDto [nome=" + nome + ", descricao=" + descricao + ", status=" + status + ", dataInicio="
+				+ dataInicio + ", dataFim=" + dataFim + "]";
+	}
 }

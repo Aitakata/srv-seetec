@@ -6,7 +6,7 @@ import br.gov.etec.app.dtos.EventoDto;
 import br.gov.etec.app.entity.EventoEntity;
 
 /* 
- * Na camada service, normalmente definimos as regras de negocios 
+ * Regras de negocios 
  */
 public interface Evento {
 	

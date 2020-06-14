@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 import br.gov.etec.app.dtos.EventoDto;
 import br.gov.etec.app.entity.EventoEntity;
 import br.gov.etec.app.mapping.EventoMapping;
@@ -35,8 +36,6 @@ public class EventoController {
 		} else {
 			log.info("status = 0, evento invalido!!");
 		}
-			
-		
 	}
 	
 	

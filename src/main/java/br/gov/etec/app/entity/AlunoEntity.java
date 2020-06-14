@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tb_aluno")
-public class Aluno {
+public class AlunoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -109,6 +109,5 @@ public class Aluno {
 		return "Aluno [Id=" + Id + ", nome=" + nome + ", rg=" + rg + ", cpf=" + cpf + ", email=" + email + ", id_curso="
 				+ id_curso + ", data_nasc=" + data_nasc + ", senha=" + senha + "]";
 	}
-	
 	
 }

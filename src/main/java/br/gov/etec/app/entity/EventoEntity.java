@@ -12,6 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_evento")
 public class EventoEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_evento", nullable = false)
@@ -68,6 +69,10 @@ public class EventoEntity {
 	public void setDataFim(Date dataFim) {
 		this.dataFim = dataFim;
 	}
-	
+	@Override
+	public String toString() {
+		return "EventoEntity [Id=" + Id + ", nome=" + nome + ", descricao=" + descricao + ", status=" + status
+				+ ", dataInicio=" + dataInicio + ", dataFim=" + dataFim + "]";
+	}
 
 }

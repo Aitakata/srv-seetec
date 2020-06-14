@@ -26,7 +26,6 @@ public class EventoImpl implements Evento {
 	/* 
 	 *  implementamos o método para validar o Evento como ativo
 	*/
-	@Override
 	public Boolean validarEvento(EventoDto evento) {
 		// Regra de negócio
 		if (evento.getStatus() == 1 ) {
